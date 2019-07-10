@@ -60,7 +60,7 @@ elseif($hourStart -ne '*' -and $hourEnd -ne '*') {
 if ($messagecontain -ne '*') {
   #$evalmessage = '| Where-Object -Property Message -Match '''+$messagecontain+''''
   $evalmessage = '| where { $_.Message | Select-String "'+$messagecontain+'"}'
-  $nameFile = $nameFile+'MessageContain'+$evalmessage
+  $nameFile = $nameFile+'MessageContain'+$messagecontain
 }
 
 if ($logontype -ne '*') {
