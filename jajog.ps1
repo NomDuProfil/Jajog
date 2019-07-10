@@ -32,8 +32,10 @@ if ($endTime -ne "*") {
 }
 
 if($id -ne '*') {
-    $filter = $filter+'ID='''+$id+''';'
-    $nameFile = $nameFile+'ID'+$id
+    $filter = $filter+'ID='+$id+';'
+    $tmp = $id -replace ' ',''
+    $tmp = $tmp -replace ',','_'
+    $nameFile = $nameFile+'ID'+$tmp
 }
 
 $eval = ' | '
