@@ -50,6 +50,12 @@ elseif ($hourStart -eq '*' -and $hourEnd -ne '*') {
     exit
 }
 elseif($hourStart -ne '*' -and $hourEnd -ne '*') {
+    if ([int]$hourStart -lt 10 -and !$hourStart.Contains('0')) {
+        $hourStart = '0'+$hourStart
+    }
+    if ([int]$hourEnd -lt 10 -and !$hourEnd.Contains('0')) {
+        $hourEnd = '0'+$hourEnd
+    }
     if ($hourStart -gt $hourEnd) {
         $eval = '| ?{ (($_.TimeCreated.Hour -ge '+$hourStart+') -OR ($_.TimeCreated.Hour -lt '+$hourEnd+')) } |'
     }
