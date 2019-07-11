@@ -8,7 +8,7 @@ param (
     [string]$logontype = "*"
 )
 
-#MOIS/JOUR/ANNEE
+#JOUR/MOIS/ANNEE
 
 Write-Output "Started"
 
