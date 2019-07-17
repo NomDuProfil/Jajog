@@ -25,7 +25,7 @@ if ($startTime -ne "*") {
 
 if ($endTime -ne "*") {
     $Recent = Get-Date -Day $endTime.split('/')[0] -Month $endTime.split('/')[1] -Year $endTime.split('/')[2] -Hour 0 -Minute 0 -Second 0
-    $filter = $filter+'EndTime='''+$endTime+''';'
+    $filter = $filter+'EndTime='''+$Recent+''';'
     $forName = $Oldest -replace ' ','_'
     $forName = $forName -replace ':','_'
     $nameFile = $nameFile+'EndTime'+$forName
